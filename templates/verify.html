@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <h2>Verify Timestamp</h2>
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="timestamp_id" class="form-label">By Timestamp ID</label>
+                <input type="number" class="form-control" id="timestamp_id" name="timestamp_id">
+                <div class="form-text">Enter the timestamp ID to verify</div>
+            </div>
+            <button type="submit" class="btn btn-primary" name="verify_by_id">Verify</button>
+        </form>
+
+        <hr class="my-4">
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="file" class="form-label">By File Upload</label>
+                <input class="form-control" type="file" id="file" name="file">
+                <div class="form-text">Upload file to verify against stored hash</div>
+            </div>
+            <button type="submit" class="btn btn-primary" name="verify_by_file">Verify</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
